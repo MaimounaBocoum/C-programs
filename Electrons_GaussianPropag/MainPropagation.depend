@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1479984114 source:e:\git\maï code c++\mainpropagation\main.cpp
+	<cmath>
+	<limits>
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<list>
+	<string.h>
+	<omp.h>
+	<Variables.h>
+
+1479984088 e:\git\maï code c++\mainpropagation\variables.h
+	<cmath>
+	<limits>
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<list>
+	<string.h>
+	<omp.h>
+
+1479984114 source:e:\git\maï code c++\electrons_gaussianpropag\main.cpp
+	<cmath>
+	<limits>
+	<iostream>
+	<fstream>
+	<cstdlib>
+	<string>
+	<vector>
+	<list>
+	<string.h>
+	<omp.h>
+	<Variables.h>
+

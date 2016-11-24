@@ -1,0 +1,38 @@
+// p-test-traj-lpaw : sampling dt*save
+
+SS: eps = 0., tmin = 0, tmax = 10, dt = 0.1, save = 100;
+//SS: eps = 0., tmin = -50, tmax = 50, dt = 0.1, save = 10;
+
+// rotation of angle pi/4:
+//LP: a0 = 1, w0 = 3, ell = 1, t0 = 30, phi = 0, lambda = 0.8, pol = (0.7071,0,-0.7071), lpP = (0.7071,0,0.7071);
+//LP: a0 = 2.5, w0 = 5, ell = 1, t0 = 15, phi = 1.8, lambda = 0.8, pol = (0.7071,0,-0.7071), lpP = (0.7071,0,0.7071);
+
+// symetric in a mirror:
+
+// E_r
+//LP: a0 = 1, w0 = 3, ell = 1, t0 = 30, phi = -3.14, lambda = 0.8, pol = (0.7071,0,-0.7071), lpP = (0.7071,0,0.7071);
+LP: a0 = 0.4, w0 = 3, ell = 1, t0 = 30, phi = 0, lambda = 0.8, pol = (0.7071,0,0.7071), lpP = (-0.7071,0,0.7071);
+
+// E_i
+//LP: a0 = 2.5, w0 = 5, ell = 1, t0 = 15, phi = 0, lambda = 0.8, pol = (1,0,0), lpP = (0,0,-1);
+LP: a0 = 0.4, w0 = 3, ell = 1, t0 = 30, phi = 0, lambda = 0.8, pol = (-0.7071,0,0.7071), lpP = (-0.7071,0,-0.7071);
+
+// simple propagation along z:
+//LP: a0 = 1, w0 = 1, ell = 1, t0 = 30, phi = 0, lambda = 0.8, pol = (1,0,0), lpP = (0,0,1);
+
+
+
+
+//PP: charge = -1, mass = 1, num = 1, L = (0,0,0), R0 = (0,0,0), LP = (0,0,0), P0 = (0,0,0), SysCoord = 0;
+PP: charge = -1, mass = 1, num = 10000, L = (0.4,0.4,0.62), R0 = (0,0,0), LP = (0,0,0), P0 = (0,0,0), SysCoord = 2;
+
+// * ell = waist_y / waist_x. Only works for fo = 1 (default value);
+// * the shape of initial spatial distribution L depends on the sign of its elements:
+//    - (+,+,+) : rectangular uniform distribution (half size x, half size y, half size z)
+//    - (-,-,+) : elliptical uniform distribution (x radius, y/x radii quotient, half size z)
+//    - (+,-,+) : elliptical gaussian distribution (x half width 1/e2, y half width 1/e2, half si
+ze z)
+// * SysCoord: integer. The system of coordinate for P depends on its value :
+//    - 0 : cartesian, LP = (LPx,LPy,LPz), P0 = (P0x,P0y,P0z);
+//    - 1 : polar, LP = (LPr, LPtheta, LPphi), P0 = (P0r, P0theta, P0phi);
+//    - 2 :
